@@ -20,10 +20,10 @@ class TaskViewSet(viewsets.ModelViewSet):
             Remove an existing note.
 
         partial_update:
-            Update one or more fields on an existing user.
+            Update one or more fields on an existing note.
 
         update:
-            Update a user.
+            Update a note.
     """
     serializer_class = TaskSerializer
     queryset = Task.objects.all()
@@ -31,7 +31,12 @@ class TaskViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         query = self.request.query_params.get('query')
-        queryset = Task.objects.filter(Q(title__contains=query) | Q(content__contains=query)).order_by(
-            'id')
+        print(query)
+        if query is not None:
+            queryset = Task.objects.filter(Q(title__contains=query) | Q(content__contains=query)).order_by('id')
+            # print(f"Query set is {queryset}")
+        else:
+            queryset = Task.objects.all()
+            # print(f"Query set is {queryset}")
 
         return queryset

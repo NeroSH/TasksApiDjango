@@ -369,7 +369,7 @@
     <package id="167" parent="1" name="json_tree"/>
     <package id="168" parent="1" name="rtree"/>
     <package id="169" parent="1" name="rtree_i32"/>
-    <table id="170" parent="2" name="TasksApi_task"/>
+    <table id="170" parent="2" name="api_task"/>
     <table id="171" parent="2" name="auth_group"/>
     <table id="172" parent="2" name="auth_group_permissions"/>
     <table id="173" parent="2" name="auth_permission"/>
@@ -1357,6 +1357,7 @@
       <Position>3</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <key id="505" parent="170">
       <ColNames>id</ColNames>

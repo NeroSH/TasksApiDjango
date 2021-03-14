@@ -12,14 +12,15 @@ schema_view = get_schema_view(
 )
 
 urlpatterns = [
+    path('', include('api.urls')),
     path('admin/', admin.site.urls),
-    path('notes/', include('api.urls')),
     path('openapi', get_schema_view(
         title="Tasks API",
         description="API to perform GET, POST, PUT methods"
     ), name='openapi-schema'),
-    path('', TemplateView.as_view(
+    path('docs/', TemplateView.as_view(
         template_name='documentation.html',
         extra_context={'schema_url': 'openapi-schema'}
     ), name='swagger-ui'),
 ]
+
