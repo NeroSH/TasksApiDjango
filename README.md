@@ -14,7 +14,6 @@ note represents JSON
 
 Method | URL | Response
 ------------ | ------------ | -------------
-GET | http://127.0.0.1:8000/docs | Documentation
 GET | http://127.0.0.1:8000/notes | List of all notes
 GET | http://127.0.0.1:8000/notes?query=string | Get note that contains query in title ot content
 GET | http://127.0.0.1:8000/notes/{id} | Get a note by id
